@@ -7,7 +7,7 @@ const Sidebar = ({value}) => {
         <SidebarWrapper value={value}>
             <div id="sidebar-wrapper">
                 <div className="list-group list-group-flush">
-                    <NavLink className="list-group-item" activeClassName="active" to="/aa">pageA</NavLink>
+                    <NavLink className="list-group-item" activeClassName="active" to="/aa">particle-effect-button</NavLink>
                     <NavLink className="list-group-item" activeClassName="active" to="/bb">pageB</NavLink>
                 </div>
             </div>

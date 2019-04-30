@@ -7,10 +7,7 @@ const Nav = ({onClick}) => {
         <button type="button" onClick={onClick}>
           <span className="navbar-toggler-icon"></span>
         </button>
-
-        <Link className="btn btn-primary" to="/home">Home</Link>
-
-        
+        <Link className="btn btn-primary" to="/">Home</Link>        
     </div>
   )
 }

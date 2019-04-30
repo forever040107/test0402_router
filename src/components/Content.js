@@ -9,12 +9,12 @@ const Content = () => (
     <div id="page-content-wrapper">
         <ToggleNav />
         <div className="container-fluid">
-        <Switch>
-            <Route exact path="/aa" component={PageA}/>
-            <Route path="/bb" component={PageB}/>
-            <Route path="/home" component={Home}/>
-        </Switch>
-      </div>
+            <Switch>
+                <Route exact path="/" component={Home}/>
+                <Route path="/aa" component={PageA}/>
+                <Route path="/bb" component={PageB}/>
+            </Switch>
+        </div>
     </div>
 )
 
