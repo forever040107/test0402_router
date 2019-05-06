@@ -1,38 +1,36 @@
 import React, { Component } from 'react'
-import ParticleEffectButton from 'react-particle-effect-button'
+import ParticleButton from './particle/ParticleButton'
+import ButtonDefaults from './particle/ButtonDefault';
+import ChangeInput from './particle/ChangeInput';
+import changeStyle from '../containers/ChangeStyle'
 
 export default class PageA extends Component {
-  state = {
-    hidden: false
-  }
 
   render () {
+    let titleField = null
     return (
-      <ParticleEffectButton
-        hidden={this.state.hidden}
-        type='triangle'
-      >
-        <button
-          style={{
-            background: '#121019',
-            color: '#fff',
-            padding: '1.5rem 3rem',
-            border: '0',
-            borderRadius: 5,
-            cursor: 'pointer',
-            fontSize: '1.2em'
+      <div>
+        <h1 style={{ textAlign: 'center' }}>React Particle Effect Buttons</h1>
+        <ChangeInput 
+          onBlur={(e) => {
+              if (titleField.value.trim() && e.target instanceof HTMLInputElement) {  
+                  //更新標題    
+                  changeStyle(titleField.value)
+                  console.log('changeStyleeeeeee')
+              }
           }}
-          onClick={this._onToggle}
-        >
-          click me circle
-        </button>
-      </ParticleEffectButton>
+        />
+        {ButtonDefaults.map((ButtonDefault, index) => (
+          <ParticleButton
+            key={index}
+            background={ButtonDefault.background}
+            text={ButtonDefault.text}
+            buttonStyles={ButtonDefault.buttonStyles}
+            buttonOptions={ButtonDefault.buttonOptions}
+          />
+        ))}
+      </div>
     )
   }
 
-  _onToggle = () => {
-    this.setState({
-      hidden: !this.state.hidden
-    })
-  }
 }

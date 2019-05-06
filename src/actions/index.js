@@ -5,3 +5,9 @@ export const toggleSidebar = (value) => {
   }
 }
 
+export const changeStyle = (props) => {
+  return {
+    type: 'CHANGE_STYLE',
+    themeColor: props
+  }
+}
